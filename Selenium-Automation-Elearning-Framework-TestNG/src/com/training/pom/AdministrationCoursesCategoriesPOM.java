@@ -31,9 +31,11 @@ public class AdministrationCoursesCategoriesPOM {
 	@FindBy(id="course_category_name") 
 	private WebElement categoryNameEntry; 
 	
-	@FindBy(id="qf_cc7bef") 
+	@FindBy(xpath="//label[contains(text(),'Yes')]") 
 	private WebElement radioButtonForYes; 
 	
+	@FindBy(xpath="//label[contains(text(),'No')]") 
+	private WebElement radioButtonForNo;
 	
 	@FindBy(id="course_category_submit") 
 	private WebElement addCategoryBtn;
@@ -58,6 +60,7 @@ public class AdministrationCoursesCategoriesPOM {
 	}
 	
 	public void clickRadioButtonForYes() {
+		this.radioButtonForNo.click();
 		this.radioButtonForYes.click();
 	}
 	

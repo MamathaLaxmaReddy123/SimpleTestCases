@@ -1,10 +1,12 @@
 package com.training.pom;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
 
 public class AdministrationAddUsersToCoursesPOM {
 
@@ -45,11 +47,16 @@ public class AdministrationAddUsersToCoursesPOM {
 	public void selectCourseFromCourseList() {
 		//this.languageDD.clear();
 		Select course = new Select(courseListDD);
-		course.selectByValue("EASYLEARNING");
-		course.selectByVisibleText("(MANIPALCOURSE) Manipal Course");
+		course.selectByValue("NL103001");
+		//course.selectByVisibleText("(MANIPALCOURSE) Manipal Course");
 	}
 	
 	public void addToCoursesButton() {
 		this.addToCoursesButton.click(); 
+	}
+	public void validateMessage() {
+		String expectedMessage="The selected users are subscribed to the selected course";
+		String actualMessage=driver.findElement(By.xpath("//div[contains(text(),'The selected users are subscribed to the selected course')]")).getText();
+		Assert.assertEquals(actualMessage, expectedMessage);
 	}
 }

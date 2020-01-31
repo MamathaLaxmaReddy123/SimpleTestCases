@@ -11,7 +11,8 @@ public class Administration_DelCoursesCategories extends LoginTests {
 	@Test
 	public void administrationDelCourseCategory() throws InterruptedException {
 		System.out.println("Entered into administrationCreateCourse()");
-		//adminDelCourseCategoryPOM.clickAdministrationBtn();
+		adminDelCourseCategoryPOM= new AdministrationDeleteCoursesCategoriesPOM(driver);
+		adminDelCourseCategoryPOM.clickAdministrationBtn();
 		adminDelCourseCategoryPOM.clickCourseCategoriesLink();
 		adminDelCourseCategoryPOM.clickOnDelThisCategoryIcon();
 		adminDelCourseCategoryPOM.verifyMessageValidation();

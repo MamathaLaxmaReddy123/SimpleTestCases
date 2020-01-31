@@ -6,18 +6,19 @@ import com.training.pom.AdministrationCoursesCategoriesPOM;
 
 public class Administration_CoursesCategories extends LoginTests {
 	
-	private AdministrationCoursesCategoriesPOM adminCourseCategoryPOM;
+	private AdministrationCoursesCategoriesPOM adminCreateCourseCategoryPOM;
+	
 	@Test
 	public void administrationCourseCategory() throws InterruptedException {
-		adminCourseCategoryPOM= new AdministrationCoursesCategoriesPOM(driver);
-		adminCourseCategoryPOM.clickAdministrationBtn();
-		adminCourseCategoryPOM.clickCourseCategoriesLink();
-		adminCourseCategoryPOM.clickAddCategoryIcon();
-		adminCourseCategoryPOM.sendCategoryCode("BL");
-		adminCourseCategoryPOM.sendCategoryName("Blended Learning");
-		adminCourseCategoryPOM.clickRadioButtonForYes();
-		adminCourseCategoryPOM.validateRadioButtonForYes();
+		adminCreateCourseCategoryPOM= new AdministrationCoursesCategoriesPOM(driver);
+		adminCreateCourseCategoryPOM.clickAdministrationBtn();
+		adminCreateCourseCategoryPOM.clickCourseCategoriesLink();
+		adminCreateCourseCategoryPOM.clickAddCategoryIcon();
+		adminCreateCourseCategoryPOM.sendCategoryCode("BL");
+		adminCreateCourseCategoryPOM.sendCategoryName("Blended Learning");
+		adminCreateCourseCategoryPOM.clickRadioButtonForYes();
+		adminCreateCourseCategoryPOM.validateRadioButtonForYes();
 		Thread.sleep(2000);
-		adminCourseCategoryPOM.clickOnAddCategory();
+		adminCreateCourseCategoryPOM.clickOnAddCategory();
 	}
 }

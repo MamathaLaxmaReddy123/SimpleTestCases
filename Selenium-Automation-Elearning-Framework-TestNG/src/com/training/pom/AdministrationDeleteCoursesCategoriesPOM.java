@@ -14,16 +14,16 @@ public class AdministrationDeleteCoursesCategoriesPOM {
 		this.driver = driver;
 		PageFactory.initElements(driver, this); }
 
-	@FindBy(xpath="//*[@title='Administration']")
+	@FindBy(xpath="//a[contains(text(),'Administration')]")
 	private WebElement adminstrationLink;
 
-	@FindBy(linkText="Courses categories") 
+	@FindBy(xpath="//a[contains(text(),'Courses categories')]") 
 	private WebElement courseCategories;
 
 	@FindBy(xpath="//tr[5]//td[4]//a[3]//img[1]")
 	private WebElement deleteThisCategoryIcon;
 	
-	@FindBy(xpath="//*[contains(text(),'Deleted')]")
+	@FindBy(xpath="//ul[@class='breadcrumb']/following-sibling::div")
 	private WebElement actualMessage;
 	
 
@@ -38,7 +38,7 @@ public class AdministrationDeleteCoursesCategoriesPOM {
 	}
 	public void verifyMessageValidation() {
 		String expectedMessage="Deleted";
-		Assert.assertEquals(actualMessage, expectedMessage);
+		Assert.assertEquals(actualMessage.getText(), expectedMessage);
 	}
 	
 

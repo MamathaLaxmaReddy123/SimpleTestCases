@@ -10,10 +10,10 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
-public class AdministrationCourseListPOM {
+public class Administration_CourseListPOM {
 
-	private WebDriver driver;
-	public AdministrationCourseListPOM(WebDriver driver) { 
+	public WebDriver driver;
+	public Administration_CourseListPOM(WebDriver driver) { 
 		this.driver = driver;
 		PageFactory.initElements(driver, this); }
 

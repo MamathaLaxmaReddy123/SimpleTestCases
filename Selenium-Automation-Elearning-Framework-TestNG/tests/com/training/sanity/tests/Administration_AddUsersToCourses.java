@@ -6,10 +6,8 @@ import com.training.pom.AdministrationAddUsersToCoursesPOM;
 
 public class Administration_AddUsersToCourses extends LoginTests{
 	
-	
 	private AdministrationAddUsersToCoursesPOM adminAddUsersToCoursePOM;
 
-	
 	@Test
 	public void administrationAddUsersToCourses() throws InterruptedException  {
 		adminAddUsersToCoursePOM= new AdministrationAddUsersToCoursesPOM(driver);
